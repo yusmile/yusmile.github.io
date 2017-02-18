@@ -1,0 +1,1224 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="部署" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Dream Come True" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在自建博客系列（一）在Windows平台下进行博客平台搭建一文中，我们已经顺利搭建成功博客环境，并在本地看见了效果，那么今天要实现的就是将本地内容搬到网上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建博客（三）同时托管到github和coding">
+<meta property="og:url" content="http://cometrue.top/2017/02/03/自建博客（三）同时托管到github和coding/index.html">
+<meta property="og:site_name" content="Dream Come True">
+<meta property="og:description" content="在自建博客系列（一）在Windows平台下进行博客平台搭建一文中，我们已经顺利搭建成功博客环境，并在本地看见了效果，那么今天要实现的就是将本地内容搬到网上">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-0604d6689327cb5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-db0339f9c2756f94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-353cefb59f9a96c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-c836b98ca729c036.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-9fe4c7904f9dd550.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-e25308c0b6d00844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-bf62b933c1eb9f83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-363c831459eefabf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-9098e8913fa59721.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-9da60e84ef21c769.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-f4f578886b00b0b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-4b9868b44ee9ba0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-75d1aa10ad507c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-c280bdbb81877b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-6a3ab4e51ecc9050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-3954192b2876c589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-f91687d102eb12ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-8d97c6950b70772c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-159cec067234c904.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-95c4186f704cc4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-12T11:51:10.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自建博客（三）同时托管到github和coding">
+<meta name="twitter:description" content="在自建博客系列（一）在Windows平台下进行博客平台搭建一文中，我们已经顺利搭建成功博客环境，并在本地看见了效果，那么今天要实现的就是将本地内容搬到网上">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4542536-0604d6689327cb5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6253675734812853000',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cometrue.top/2017/02/03/自建博客（三）同时托管到github和coding/"/>
+
+
+
+
+
+  <title> 自建博客（三）同时托管到github和coding | Dream Come True </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8759f43af3e04f8088e92ff251867945";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dream Come True</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">现实梦想</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list-ol"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-database"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pagelines"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://cometrue.top/2017/02/03/自建博客（三）同时托管到github和coding/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="海天心Y2kking">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dream Come True">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Dream Come True" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自建博客（三）同时托管到github和coding
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T23:08:58+08:00">
+                2017-02-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-02-12T19:51:10+08:00">
+                2017-02-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/践行/" itemprop="url" rel="index">
+                    <span itemprop="name">践行</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/践行/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/自建博客（三）同时托管到github和coding/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/03/自建博客（三）同时托管到github和coding/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在<a href="http://www.jianshu.com/p/718902b05e91" target="_blank" rel="external">自建博客系列（一）在Windows平台下进行博客平台搭建</a>一文中，我们已经顺利搭建成功博客环境，并在本地看见了效果，那么今天要实现的就是将本地内容搬到网上<a id="more"></a><del>，并结合<a href="http://www.jianshu.com/p/04535752f926" target="_blank" rel="external">自建博客系列（二）关于域名（购买或免费多种选择）</a>中的内容，捆绑上我们自己的域名。<em>（因为在践行的过程中出现了比想象中多得多的出错提示，所以这后半部分等待后面继续来实践）</em></del></p>
+<hr>
+<p><em>参考了一些网上的教程，考虑到：加快国内访问速度、为了百度搜索爬虫能抓取自己博客上的内容，拟把博客同时部署在Github Pages和Coding(之前的GitCafe)上。</em></p>
+<h1 id="一、部署到github前的准备"><a href="#一、部署到github前的准备" class="headerlink" title="一、部署到github前的准备"></a>一、部署到github前的准备</h1><h2 id="1、注册GitHub"><a href="#1、注册GitHub" class="headerlink" title="1、注册GitHub"></a>1、注册GitHub</h2><ul>
+<li>打开<a href="https://github.com/" target="_blank" rel="external">GitHub官网</a></li>
+<li>填写注册信息进行注册操作：没有登录的用户打开网站首页就会显示注册的操作（如图所示），或者是点击Sign up按钮进入注册详情页，<strong>注册你的username和邮箱，邮箱十分重要，GitHub上很多通知都是通过邮箱的。</strong>注册过程比较简单,在此我不再啰嗦。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-0604d6689327cb5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>填写注册信息：点击Sign up for GitHub(注册)按钮后，接下来是选择协议部分。根据自己的情况选择相关的协议，一般人选的都是免费的那一项。<h2 id="2、创建仓库"><a href="#2、创建仓库" class="headerlink" title="2、创建仓库"></a>2、创建仓库</h2></li>
+<li>登录github账号：在github首页点击Sign in按钮进入登录页面。填写用户名或邮箱和密码，点击Sign in按钮登录。<img src="http://upload-images.jianshu.io/upload_images/4542536-db0339f9c2756f94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>点击创建仓库：点击在登录的用户图像左边的+号和下三角符号按钮。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-353cefb59f9a96c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>填写创建仓库信息：<br>仓库名称必须是用户名.github.io（别问我为什么，人家就是这样规定的），比如我的Github用户名为yusmile，那么我创建的repository的名字应该是yusmile.github.io。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-c836b98ca729c036.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>*填好相关信息后点击Create repository(创建仓库)按钮。<h2 id="3、配置SSH"><a href="#3、配置SSH" class="headerlink" title="3、配置SSH"></a>3、配置SSH</h2></li>
+<li>在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys。<blockquote>
+<p>ls -al ~/.ssh</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4542536-9fe4c7904f9dd550.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>如果存在的话(如上图），直接删除.ssh文件夹里面所有文件<br><img src="http://upload-images.jianshu.io/upload_images/4542536-e25308c0b6d00844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>如果不存在就没有关系，生成新的SSH Key：<blockquote>
+<p>$ ssh-keygen -t rsa -C “邮件地址@youremail.com”<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>注意</strong>1.此处的邮箱地址，你可以输入自己的邮箱地址；2.此处的「-C」的是大写的「C」<br>然后系统会要你输入密码：</p>
+<blockquote>
+<p>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;<br>Enter same passphrase again:&lt;再次输入加密串&gt;</p>
+</blockquote>
+<p>在回车中会提示你输入一个密码（如下图，我没有输入直接回车，如果你输入的话，要记得，到时候会用到），这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br><strong>注意</strong>：输入密码的时候没有*字样的，你直接输入就可以了。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-bf62b933c1eb9f83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>注：id_rsa文件是私钥，要妥善保管，id_rsa.pub是公钥文件。</p>
+<h2 id="4、添加公钥到github"><a href="#4、添加公钥到github" class="headerlink" title="4、添加公钥到github"></a>4、添加公钥到github</h2><ul>
+<li>打开本地 <em>C:\Users\Administrator.ssh\id_rsa.pub或 C:\Users\admin.ssh\id_rsa.pub</em>此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统，点击右上角的 Settings—&gt;(屏幕左边）SSH and GPG keys —&gt; New SSH key （屏幕右上角）—&gt; 把你本地生成的密钥复制到里面（key文本框中）， 点击 Add SSH key 就ok了<br><img src="http://upload-images.jianshu.io/upload_images/4542536-363c831459eefabf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h2 id="5、测试"><a href="#5、测试" class="headerlink" title="5、测试"></a>5、测试</h2>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：<blockquote>
+<p>ssh -T git@github.com</p>
+</blockquote>
+</li>
+</ul>
+<p>如果是下面的反馈：<br><img src="http://upload-images.jianshu.io/upload_images/4542536-9098e8913fa59721.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>不要紧张，输入yes就好，然后会看到：<br><img src="http://upload-images.jianshu.io/upload_images/4542536-9da60e84ef21c769.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="6、设置用户信息"><a href="#6、设置用户信息" class="headerlink" title="6、设置用户信息"></a>6、设置用户信息</h3><p>现在你已经可以通过 SSH 链接到 GitHub 了，还有一些个人信息需要完善的。<br>Git 会根据用户的名字和邮箱来记录提交。GitHub 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<blockquote>
+<p>git config –global user.name “yusmile”//用户名<br>git config –global user.email “182036669@qq.com”//填写自己的邮箱</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4542536-f4f578886b00b0b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="二、部署到Coding-net前的准备"><a href="#二、部署到Coding-net前的准备" class="headerlink" title="二、部署到Coding.net前的准备"></a>二、部署到Coding.net前的准备</h1><h2 id="1、注册"><a href="#1、注册" class="headerlink" title="1、注册"></a>1、注册</h2><p>打开<a href="https://coding.net/" target="_blank" rel="external">Coding.net</a>注册，我注册使用的邮箱和用户名同<a href="https://github.com/" target="_blank" rel="external">GitHub</a>一致。</p>
+<h2 id="2、添加SSH公钥"><a href="#2、添加SSH公钥" class="headerlink" title="2、添加SSH公钥"></a>2、添加SSH公钥</h2><p>此前已经在Github上创建了SSH公钥，直接用Github的SSH公钥就可以部署到Coding上了，本地打开前面的id_rsa.pub文件，复制里面的所有内容填写到公钥内容中，公钥名称可以随意起名，添加就可以了。<img src="http://upload-images.jianshu.io/upload_images/4542536-4b9868b44ee9ba0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3、测试公钥"><a href="#3、测试公钥" class="headerlink" title="3、测试公钥"></a>3、测试公钥</h2><p>打开Git Base Here  输入命令</p>
+<blockquote>
+<p>ssh -T git@git.coding.net</p>
+</blockquote>
+<p>如果返回如下提示，就表示公钥添加成功了<br>Coding.net Tips : [Hello ! You’ve conected to Coding.net by SSH successfully! ]</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4542536-75d1aa10ad507c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>也有些前辈是看到下图提示后输入：yes<br><img src="http://upload-images.jianshu.io/upload_images/4542536-c280bdbb81877b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>返回：<br><img src="http://upload-images.jianshu.io/upload_images/4542536-6a3ab4e51ecc9050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>表示连接成功。</p>
+</blockquote>
+<h2 id="4、创建项目"><a href="#4、创建项目" class="headerlink" title="4、创建项目"></a>4、创建项目</h2><ul>
+<li>同GITHUB差不多，创建一个项目<br><img src="http://upload-images.jianshu.io/upload_images/4542536-3954192b2876c589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>打开Pages服务</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/4542536-f91687d102eb12ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">选择后点击“保存”即可。</p>
+<h1 id="三、同时部署到github和coding"><a href="#三、同时部署到github和coding" class="headerlink" title="三、同时部署到github和coding"></a>三、同时部署到github和coding</h1><h2 id="1、-config-yml配置"><a href="#1、-config-yml配置" class="headerlink" title="1、_config.yml配置"></a>1、_config.yml配置</h2><p>想要同时部署到2个平台，就要修改博客根目录下面的_config.yml文件中的deploy如下<br>根据<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">官网</a>上给出的多部署配置方式需要修改成下面的形式：</p>
+<blockquote>
+<p>deploy:<br>  type: git<br>  repo:<br>  type: heroku<br>  repo:</p>
+</blockquote>
+<p>我是这样修改的：<br><img src="http://upload-images.jianshu.io/upload_images/4542536-8d97c6950b70772c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="2、安装插件"><a href="#2、安装插件" class="headerlink" title="2、安装插件"></a>2、安装插件</h2><blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<h2 id="3、设置完成后，在hexo目录下执行hexo-d即可同时部署。"><a href="#3、设置完成后，在hexo目录下执行hexo-d即可同时部署。" class="headerlink" title="3、设置完成后，在hexo目录下执行hexo d即可同时部署。"></a>3、设置完成后，在hexo目录下执行hexo d即可同时部署。</h2><hr>
+<p><strong><em> 报错</em></strong></p>
+<ul>
+<li>提示：<br><img src="http://upload-images.jianshu.io/upload_images/4542536-159cec067234c904.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><ul>
+<li>对策：<br>删除你hexo 下面的.deploy_git文件夹，然后分别输入下面4条命令 <blockquote>
+<p>git config –global core.autocrlf false<br>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4、测试"><a href="#4、测试" class="headerlink" title="4、测试"></a>4、测试</h2><p>部署完成后，浏览器打开以下地址<br>GitHub:<a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a><br>Coding:<a href="http://username.coding.me" target="_blank" rel="external">http://username.coding.me</a><br>出现以下结果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4542536-95c4186f704cc4c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="终于成功了"></p>
+<hr>
+<p>本文到此先告一段落。</p>
+<p>看似简单的一篇，我其实折腾了不止3天，其中有很多错误，谢谢网络上的各位前辈提供资源和回答让我有了目前这个结果！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/htx-qcode.png" alt="海天心Y2kking wechat" style="width: 200px; max-width: 100%;"/>
+    <div>如果喜欢我的文章，动动手指点开上面图片关注我吧，我们一起做朋友~~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>不用打赏，转发朋友圈和微信群就是鼓励！<br><br>赠人玫瑰手留余香，您的支持将鼓励我继续分享！<br>喜欢我的文章，成为我的天使投资人吧 ^_^</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xr5a7.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%89%93%E8%B5%8F.png" alt="海天心Y2kking WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xr5a7.com1.z0.glb.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%93%E8%B5%8F.jpg" alt="海天心Y2kking Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/coding/" rel="tag"># coding</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/同时托管2/" rel="tag"># 同时托管2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/02/自建博客（二）关于域名（购买或免费多种选择）/" rel="next" title="自建博客（二）关于域名（购买或免费多种选择）">
+                <i class="fa fa-chevron-left"></i> 自建博客（二）关于域名（购买或免费多种选择）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/05/自建博客（四）HEXO博客的常识+更换NEXT主题/" rel="prev" title="自建博客（四）HEXO博客的常识+更换NEXT主题">
+                自建博客（四）HEXO博客的常识+更换NEXT主题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/03/自建博客（三）同时托管到github和coding/"
+           data-title="自建博客（三）同时托管到github和coding" data-url="http://cometrue.top/2017/02/03/自建博客（三）同时托管到github和coding/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="海天心Y2kking" />
+          <p class="site-author-name" itemprop="name">海天心Y2kking</p>
+          <p class="site-description motion-element" itemprop="description">The Pursuit of Happyness</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1419491963" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/b6478edae94e" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="182036669@qq.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/yusmile" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/cometrueTOP/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-smile-o"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Y2kking" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mp.weixin.qq.com/s/fefeEsv-AQeZncj0v6w7Cg" target="_blank" title="海天心">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  海天心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://mp.weixin.qq.com/s/fefeEsv-AQeZncj0v6w7Cg" title="微信公众号" target="_blank">微信公众号</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/b6478edae94e" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cometrue.top" title="现实梦想" target="_blank">现实梦想</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/study-plan" title="学习计划" target="_blank">学习计划</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="182036669@qq.com" title="Email" target="_blank">Email</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、部署到github前的准备"><span class="nav-text">一、部署到github前的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、注册GitHub"><span class="nav-text">1、注册GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、创建仓库"><span class="nav-text">2、创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、配置SSH"><span class="nav-text">3、配置SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、添加公钥到github"><span class="nav-text">4、添加公钥到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、测试"><span class="nav-text">5、测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6、设置用户信息"><span class="nav-text">6、设置用户信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、部署到Coding-net前的准备"><span class="nav-text">二、部署到Coding.net前的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、注册"><span class="nav-text">1、注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、添加SSH公钥"><span class="nav-text">2、添加SSH公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、测试公钥"><span class="nav-text">3、测试公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、创建项目"><span class="nav-text">4、创建项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、同时部署到github和coding"><span class="nav-text">三、同时部署到github和coding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-config-yml配置"><span class="nav-text">1、_config.yml配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、安装插件"><span class="nav-text">2、安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、设置完成后，在hexo目录下执行hexo-d即可同时部署。"><span class="nav-text">3、设置完成后，在hexo目录下执行hexo d即可同时部署。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、测试"><span class="nav-text">4、测试</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  (2016.2~)2017.2 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">海天心Y2kking</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yusmile"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1185 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,hexo,next,github" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Dream Come True" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="既然是自建博客之路，那就以我在本机（64位Win7系统）上搭建记录为主，拟使用GitHub+Hexo+NEXT主题搭建博客系统。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建博客（一）在Windows平台下进行博客平台搭建">
+<meta property="og:url" content="http://cometrue.top/2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/index.html">
+<meta property="og:site_name" content="Dream Come True">
+<meta property="og:description" content="既然是自建博客之路，那就以我在本机（64位Win7系统）上搭建记录为主，拟使用GitHub+Hexo+NEXT主题搭建博客系统。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-d6a1dd735fb1e305.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-8c8c189357a65612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-96ae87455250daf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-6145c6bd23de90dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-649bf148e7116548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-579e9b560c0dcd39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-ae06d742862aafac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-23c52c6d3248a4db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-bcca0679f5d2c655.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-9264562135157be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-da30a7f42a0130b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4542536-47a30207e12538c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-12T11:32:35.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自建博客（一）在Windows平台下进行博客平台搭建">
+<meta name="twitter:description" content="既然是自建博客之路，那就以我在本机（64位Win7系统）上搭建记录为主，拟使用GitHub+Hexo+NEXT主题搭建博客系统。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4542536-d6a1dd735fb1e305.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6253675734812853000',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cometrue.top/2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/"/>
+
+
+
+
+
+  <title> 自建博客（一）在Windows平台下进行博客平台搭建 | Dream Come True </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8759f43af3e04f8088e92ff251867945";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dream Come True</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">现实梦想</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list-ol"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-database"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pagelines"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://cometrue.top/2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="海天心Y2kking">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dream Come True">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Dream Come True" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自建博客（一）在Windows平台下进行博客平台搭建
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T22:36:27+08:00">
+                2017-02-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-02-12T19:32:35+08:00">
+                2017-02-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/践行/" itemprop="url" rel="index">
+                    <span itemprop="name">践行</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/践行/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+              <div class="post-description">
+                  既然是自建博客之路，那就以我在本机（64位Win7系统）上搭建记录为主，拟使用GitHub+Hexo+NEXT主题搭建博客系统。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、选择在-GitHub-上写博客"><a href="#一、选择在-GitHub-上写博客" class="headerlink" title="一、选择在 GitHub 上写博客"></a>一、选择在 GitHub 上写博客</h1><h2 id="1-GitHub是什么？"><a href="#1-GitHub是什么？" class="headerlink" title="1.GitHub是什么？"></a>1.GitHub是什么？</h2><ul>
+<li>一家公司<br>位于旧金山，由<a href="https://github.com/defunkt" target="_blank" rel="external">Chris Wanstrath</a>, <a href="https://github.com/pjhyett" target="_blank" rel="external">PJ Hyett</a> 与<a href="https://github.com/mojombo" target="_blank" rel="external">Tom Preston-Werner</a>三位开发者在2008年4月创办。迄今拥有59名全职员工，主要提供基于git的版本托管服务。<blockquote>
+<p>关于GitHub Page<br>使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。</p>
+</blockquote>
+</li>
+<li>一个网站<br><a href="https://my.oschina.net/nark/blog/116299" target="_blank" rel="external">GitHub</a>是一个基于git的版本托管服务网站，上面聚集着几乎全世界的程序大牛，还有着大量的牛逼开源项目。而项目一旦成长壮大，一个简单的名称和一段描述很可能就无法满足作者与读者的需要。此时，<a href="https://my.oschina.net/nark/blog/pages.github.com" target="_blank" rel="external">GitHub Pages</a> 就应运而生，它允许用户用更具描述性的自定义页面代替源码列表。同时，用户也可以利用其作为个人或组织主页，将 <strong>静态</strong> 网页托管其上。</li>
+</ul>
+<h2 id="2-我为何选择GitHub"><a href="#2-我为何选择GitHub" class="headerlink" title="2.我为何选择GitHub"></a>2.我为何选择GitHub</h2><ul>
+<li>无需购置服务器，GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，把blog托管在Github Pages不仅空间免费，而且稳定又安全，遭遇过空间商跑路的朋友是不是想起伤心往事</li>
+<li>还能绑定顶级域名，亲，人家免费空间竟然还允许我们绑域名有木有~~</li>
+<li>学着用 github，享受 github 的便利，比如允许本地服务器调试，脱离网络写文章毫无压力，因为可以使用git命令同步来管理文章，便于版本控制</li>
+<li>用markedown编写文章，逐渐减少在排版上花费的时间，集中精力便于更好的输出<blockquote>
+<p><a href="http://www.yangzhiping.com/tech/writing-space.html" target="_blank" rel="external">理想的写作环境：Git+Github+Markdown+Jekyll</a></p>
+</blockquote>
+</li>
+<li>独立的才是自己的<br>2015年底看到<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a>这篇文章，就感觉内心被触动了!</li>
+</ul>
+<h2 id="3-为什么写博客"><a href="#3-为什么写博客" class="headerlink" title="3.为什么写博客"></a>3.为什么写博客</h2><p>这里不重复理由，只是列出几篇有共鸣的文章作为大家的参考：<br><a href="http://beiyuu.com/why-blog" target="_blank" rel="external">我为什么写博客？</a><br><a href="https://zhuanlan.zhihu.com/p/19743861?columnSlug=cnfeat" target="_blank" rel="external">为什么你要写博客？</a><br><a href="http://www.ruanyifeng.com/blog/2006/12/why_i_keep_blogging.html" target="_blank" rel="external">为什么要写Blog？</a><br><a href="http://wenku.baidu.com/view/7a731d7f1711cc7931b7166e.html" target="_blank" rel="external">为什么你应该写博客</a><br><a href="http://blog.hiddenwangcc.com/archives/424" target="_blank" rel="external">为什么我要写博客？-02</a></p>
+<h1 id="二、搭建Hexo博客"><a href="#二、搭建Hexo博客" class="headerlink" title="二、搭建Hexo博客"></a>二、搭建Hexo博客</h1><h2 id="1-关于HEXO"><a href="#1-关于HEXO" class="headerlink" title="1.关于HEXO"></a>1.关于HEXO</h2><ul>
+<li>HEXO 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考：<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo Github地址</a>     <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo帮助文档</a></li>
+<li>选择HEXO完全是一个感觉，我从2016年初在博客环境搭建上折腾了很久，尝试了众多简易版本，最后要么觉得效果太简单，要么就是FORK后修改不成功，总之最后把时间精力都耗在了博客环境的形式之上，春节前发现HEXO的NEXT主题界面简洁，并集成了我期望的大部分功能，所以准备认真践行！</li>
+</ul>
+<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><ul>
+<li>到[官网]<a href="https://git-scm.com/download/win)下载" target="_blank" rel="external">https://git-scm.com/download/win)下载</a> Git，一路默认选项安装。本文使用的是Git-2.11.0.3-64-bit<br>，需要的用户可以<a href="http://okndkdckj.bkt.clouddn.com/Git-2.11.0.3-64-bit.exe" target="_blank" rel="external">点此下载</a> 。</li>
+<li>安装完成后可以检查一下Git是不是安装正确了：同时按下Win和R，打开运行窗口：输入cmd，敲击回车，打开命令行界面。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-d6a1dd735fb1e305.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>输入：<br><code>git --version</code><br>如果结果如下图所示，则说明安装正确，可以进行下一步了，如果不正确，则需要回头检查自己的安装过程。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-8c8c189357a65612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<blockquote>
+<p>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> ：brew install git ysyx<br>;或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装。<br>Linux (Ubuntu, Debian)：sudo apt-get install git-core</p>
+</blockquote>
+<p>Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core</p>
+<h2 id="3-安装Node-js"><a href="#3-安装Node-js" class="headerlink" title="3.安装Node.js"></a>3.安装Node.js</h2><ul>
+<li>到<a href="http://nodejs.cn/download/" target="_blank" rel="external">官网</a>下载 Node.js，保持默认设置即可，一路Next。本文使用的是node-v6.2.0-x64，需要的用户可以<a href="http://okndkdckj.bkt.clouddn.com/node-v6.2.0-x64.msi" target="_blank" rel="external">点此下载</a> 。</li>
+<li>同样检查一下是不是要求的组件都安装好了，用组合键“win+R”打开“运行”，输入“cmd”后回车，在打开的命令行界面中，输入<br><code>node -v 
+npm -v</code><br>如果结果如下图所示，则说明安装正确，可以进行下一步了，如果不正确，则需要回头检查自己的安装过程。<br><img src="http://upload-images.jianshu.io/upload_images/4542536-96ae87455250daf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h2 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4.安装Hexo"></a>4.安装Hexo</h2>Git 和 Node.js 都安装好后,首先创建一个用于存放博客文件的文件夹(比如取名 hexo），然后进入 hexo 文件夹，下面开始安装并使用 Hexo。右键选择Git Bash Here，弹出Git Bash窗口；执行命令：</li>
+<li>安装Hexo<br><code>npm install hexo-cli -g</code><ul>
+<li><strong><em>我在这出现了两个错误提示，暂时还无法解决：</em></strong><br><code>npm WARN optional Skipping failed optional dependency /hexo-cli/chokidar/fsevents:
+npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.0.12</code><br><img src="http://upload-images.jianshu.io/upload_images/4542536-6145c6bd23de90dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+<li>初始化hexo文件夹<br><code>hexo init</code><br><img src="http://upload-images.jianshu.io/upload_images/4542536-649bf148e7116548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>安装依赖和插件<br><code>npm install</code><br><img src="http://upload-images.jianshu.io/upload_images/4542536-579e9b560c0dcd39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4542536-ae06d742862aafac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4542536-23c52c6d3248a4db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4542536-bcca0679f5d2c655.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/4542536-9264562135157be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><ul>
+<li><strong><em>这里还出现了两个错误提示，折腾了两天也还是暂时还无法解决：</em></strong><br><img src="http://upload-images.jianshu.io/upload_images/4542536-da30a7f42a0130b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+<li>启动服务器进行本地预览<br><code>hexo server</code><br>在本地浏览器中打开<a href="http://localhost:4000，成功的话即可看到博客页面，至此安装就完成了。" target="_blank" rel="external">http://localhost:4000，成功的话即可看到博客页面，至此安装就完成了。</a><br><img src="http://upload-images.jianshu.io/upload_images/4542536-47a30207e12538c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p>在后面<a href="http://www.jianshu.com/p/429f1191d188" target="_blank" rel="external">自建博客系列（四）HEXO博客的常识+更换NEXT主题</a>还有一些Hexo相关的实用内容。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/htx-qcode.png" alt="海天心Y2kking wechat" style="width: 200px; max-width: 100%;"/>
+    <div>如果喜欢我的文章，动动手指点开上面图片关注我吧，我们一起做朋友~~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>不用打赏，转发朋友圈和微信群就是鼓励！<br><br>赠人玫瑰手留余香，您的支持将鼓励我继续分享！<br>喜欢我的文章，成为我的天使投资人吧 ^_^</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xr5a7.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%89%93%E8%B5%8F.png" alt="海天心Y2kking WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xr5a7.com1.z0.glb.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%93%E8%B5%8F.jpg" alt="海天心Y2kking Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/coding/" rel="tag"># coding</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/自建/" rel="tag"># 自建</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/30/自建博客系列之前言/" rel="next" title="自建博客系列之前言">
+                <i class="fa fa-chevron-left"></i> 自建博客系列之前言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/02/自建博客（二）关于域名（购买或免费多种选择）/" rel="prev" title="自建博客（二）关于域名（购买或免费多种选择）">
+                自建博客（二）关于域名（购买或免费多种选择） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/"
+           data-title="自建博客（一）在Windows平台下进行博客平台搭建" data-url="http://cometrue.top/2017/02/01/自建博客（一）在Windows平台下进行博客平台搭建/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="海天心Y2kking" />
+          <p class="site-author-name" itemprop="name">海天心Y2kking</p>
+          <p class="site-description motion-element" itemprop="description">The Pursuit of Happyness</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1419491963" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/b6478edae94e" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="182036669@qq.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/yusmile" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/cometrueTOP/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-smile-o"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Y2kking" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mp.weixin.qq.com/s/fefeEsv-AQeZncj0v6w7Cg" target="_blank" title="海天心">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  海天心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://mp.weixin.qq.com/s/fefeEsv-AQeZncj0v6w7Cg" title="微信公众号" target="_blank">微信公众号</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/b6478edae94e" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://cometrue.top" title="现实梦想" target="_blank">现实梦想</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/study-plan" title="学习计划" target="_blank">学习计划</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="182036669@qq.com" title="Email" target="_blank">Email</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、选择在-GitHub-上写博客"><span class="nav-text">一、选择在 GitHub 上写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-GitHub是什么？"><span class="nav-text">1.GitHub是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-我为何选择GitHub"><span class="nav-text">2.我为何选择GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-为什么写博客"><span class="nav-text">3.为什么写博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、搭建Hexo博客"><span class="nav-text">二、搭建Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-关于HEXO"><span class="nav-text">1.关于HEXO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Git"><span class="nav-text">2.安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Node-js"><span class="nav-text">3.安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-安装Hexo"><span class="nav-text">4.安装Hexo</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  (2016.2~)2017.2 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">海天心Y2kking</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yusmile"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
